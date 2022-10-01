@@ -1,0 +1,43 @@
+/* font-family*/
+$primaryFamily: Roboto, sans-serif;
+
+/* text color*/
+$headerTextColor: #FFFFFF;
+$footerTextColor: #545454;
+$movieTitleTextColor: #000000;
+$movieGenreAndYearTextColor: #FF6B08;
+$accentTextColor: #FF6B08;
+$categoryTextColor: #8C8C8C;
+
+/*background color*/
+$lineAnimationColor: #FF001B;
+$primaryBackgroundColor: #FFFFFF;
+$footerBackgroundColor: #F7F7F7;
+$accentBackgroundColor: #FF6B08;
+
+/*border radius*/
+$primaryBorderRadius: 5px;
+
+/*font-weight*/
+$primaryFontWeight: 500;
+$secondaryFontWeight: 400;
+
+/* font size*/
+$logoFontSize: 30px;
+$primaryFontSize: 20px;
+$secondaryFontSize: 12px;
+
+
+/* line height*/
+$logoLineHeight: 1.17; /* 35px */
+$primaryLineHeight: 1.2; /* 24px */
+$secondaryLineHeight: 1,33; /*16px*/
+$thirdLineHeight: 1.17; /*14px*/
+$aboutLineHeight: 1.67; /*20px*/
+$footerLineHeight: 1.19; /*19px*/
+$modalMovieLineHeight: 1.15; /*23px*/
+
+/* transition */ 
+$transitionColor: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$transitionBfckgroundColor: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$transitionFill: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);

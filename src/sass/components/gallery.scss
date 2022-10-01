@@ -1,0 +1,125 @@
+.main{
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        }
+}
+
+.gallery-film__list{
+    padding: 0 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -32px;
+   
+    @media screen and (min-width: 768px) {
+    flex-direction: row;
+    }
+
+     @media screen and (min-width: 1280px) {
+    padding: 0 18px;
+    }
+
+    @media screen and (min-width: 1310px) {
+    padding: 0 32px;
+    }
+}
+
+.gallery-film__item{
+    border-radius: $primaryBorderRadius;
+    margin-bottom: 20px;
+    max-width: 280px;
+    height: 440px;
+    margin-left: 32px;
+    
+    @media screen and (max-width: 767px) {
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+    
+
+    @media screen and (min-width: 768px) {
+        max-width: 336px;
+        height: 495px;
+            margin-left: 32px;
+            flex-basis: calc(100% / 2 - 32px);
+        }
+
+    @media screen and (min-width: 1280px) {
+
+        max-width: 394px;
+        min-height: 634px;
+
+    margin-left: 32px;
+    flex-basis: calc(100% / 3 - 32px);
+}
+
+    &:hover,
+    &:focus{
+    cursor: pointer;
+    
+        box-shadow: 0px 0px 15px 5px rgba(255, 107, 8, 0.75);
+    
+        transform: scale(0.98);
+}
+}
+.gallery-list__poster{
+width: 280px;
+
+margin-bottom: 10px;
+
+@media screen and (min-width: 768px) {
+        width: 336px;
+    }
+
+    @media screen and (min-width: 1280px) {
+    width: 393px;
+    }
+}
+
+.gallery-film__img{
+    display: block;
+    max-width: 100%;
+}
+
+.gallery-list__description{
+    width: 280px;
+}
+.gallery-film__title{
+    font-size: $secondaryFontSize;
+    line-height: $secondaryLineHeight;
+
+    @media screen and (min-width: 1280px) {
+    font-size: $primaryFontSize;
+    line-height: $primaryLineHeight;
+    }
+}
+
+.gallery-film__text{
+    font-size: $secondaryFontSize;
+    line-height: $secondaryLineHeight;
+
+    color: $movieGenreAndYearTextColor;
+
+    @media screen and (min-width: 1280px) {
+    font-size: $primaryFontSize;
+    line-height: $primaryLineHeight;
+    }
+}
+
+.gallery-list__card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: scale(1);
+    transition: transform 500ms;
+    
+    border-radius: 5px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}

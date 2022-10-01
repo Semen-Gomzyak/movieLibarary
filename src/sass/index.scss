@@ -1,2 +1,10 @@
 @import './common';
-@import './example';
+@import './utils/reset';
+@import './utils/breakpoint';
+@import './utils/variables';
+@import './utils/global';
+@import './components/header';
+@import './components/footer';
+@import './components/gallery';
+@import './components/pagination';
+@import './components/spiner';
