@@ -14,3 +14,4 @@ export function spinnerOn() {
     refs.backdropSpinnerRef.classList.add('visually-hidden');
   }, 2000);
 }
+
