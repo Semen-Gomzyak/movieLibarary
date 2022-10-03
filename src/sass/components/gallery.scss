@@ -16,11 +16,11 @@
     margin-left: -32px;
    
     @media screen and (min-width: 768px) {
-    flex-direction: row;
+    // flex-direction: row;
     }
 
      @media screen and (min-width: 1280px) {
-    padding: 0 18px;
+    padding: 0 17px;
     }
 
     @media screen and (min-width: 1310px) {
@@ -30,9 +30,7 @@
 
 .gallery-film__item{
     border-radius: $primaryBorderRadius;
-    margin-bottom: 20px;
-    max-width: 280px;
-    height: 440px;
+    margin-bottom: 32px;
     margin-left: 32px;
     
     @media screen and (max-width: 767px) {
@@ -43,53 +41,48 @@
     
 
     @media screen and (min-width: 768px) {
-        max-width: 336px;
-        height: 495px;
             margin-left: 32px;
-            flex-basis: calc(100% / 2 - 32px);
         }
 
-    @media screen and (min-width: 1280px) {
-
-        max-width: 394px;
-        min-height: 634px;
-
-    margin-left: 32px;
-    flex-basis: calc(100% / 3 - 32px);
-}
-
-    &:hover,
-    &:focus{
-    cursor: pointer;
-    
-        box-shadow: 0px 0px 15px 5px rgba(255, 107, 8, 0.75);
-    
-        transform: scale(0.98);
-}
 }
 .gallery-list__poster{
-width: 280px;
-
 margin-bottom: 10px;
 
-@media screen and (min-width: 768px) {
+width: 280px;
+    height: 402px;
+
+    @media screen and (min-width: 768px) {
         width: 336px;
+        height: 455px;
     }
 
     @media screen and (min-width: 1280px) {
-    width: 393px;
+        width: 395px;
+        height: 574px;
     }
 }
 
 .gallery-film__img{
     display: block;
-    max-width: 100%;
+    width: 280px;
+    height: 402px;
+
+    @media screen and (min-width: 768px) {
+            width: 336px;
+            height: 455px;
+        }
+        
+        @media screen and (min-width: 1280px) {
+            width: 395px;
+            height: 574px;
+        }
 }
 
 .gallery-list__description{
     width: 280px;
 }
 .gallery-film__title{
+    color: $movieTitleTextColor;
     font-size: $secondaryFontSize;
     line-height: $secondaryLineHeight;
 
@@ -112,7 +105,9 @@ margin-bottom: 10px;
 }
 
 .gallery-list__card{
-    position: relative;
+    width: 280px;
+    height: 440px;
+    // position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,4 +117,28 @@ margin-bottom: 10px;
     border-radius: 5px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
+    &:hover,
+        &:focus {
+            cursor: pointer;
+    
+            box-shadow: 0px 0px 15px 5px rgba(255, 107, 8, 0.75);
+    
+            transform: scale(0.98);
+        }
+
+                @media screen and (min-width: 768px) {
+                    width: 336px;
+                    height: 495px;
+                }
+        
+                @media screen and (min-width: 1280px) {
+                    width: 395px;
+                    height: 694px;
+                }
+
+}
+
+.gallery-film__raiting{
+    color: $headerTextColor;
+    background-color: $accentBackgroundColor;
 }

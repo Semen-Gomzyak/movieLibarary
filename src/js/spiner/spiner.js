@@ -1,4 +1,4 @@
-import getRefs from '../refs';
+import getRefs from '../refs/refs';
 
 const refs = getRefs();
 
@@ -15,3 +15,7 @@ export function spinnerOn() {
   }, 2000);
 }
 
+
+export function spinnerOff() {
+    refs.backdropSpinnerRef.classList.add('visually-hidden');
+  }
