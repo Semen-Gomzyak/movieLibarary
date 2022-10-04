@@ -45,6 +45,12 @@ export async function requestYearAndGenre() {
    return serch.data
 }
 
+export async function requestFilmByID(id) {
+    const serch = await axios(`movie/${id}?api_key=${API_KEY}`);
+
+   return serch.data
+}
+
 
 
 

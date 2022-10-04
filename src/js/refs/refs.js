@@ -10,5 +10,13 @@ export default function getRefs () {
         filterGenres: document.querySelector('.filter__input--genre'),
         yearFilter: document.querySelector('.filter__input--year'),
         filterGenresChoose: document.querySelector('.filter__option-choose--genre'),
+        galleryListToOpenModal: document.querySelector('.backdrop'), 
+        galleryListCloseModal: document.querySelector('.modal__close-button'),
+        modalBoxForOneFilmEl: document.querySelector('.modal__box'),
+        modalBackdropRef: document.querySelector('.backdrop'),
+        
+        modalAddWatchedBtn: document.querySelector('.add-to-watched-button'),
+        modalAddTrialerBtn: document.querySelector('.add-to-trailer-button'),
+        modalRemoveWatchedBtn: document.querySelector('.remove-to-watched-button'),
     }
 }

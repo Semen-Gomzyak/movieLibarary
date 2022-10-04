@@ -3,13 +3,13 @@ import imageDefaults from '/src/images/broken-img.jpg';
 import { convertGanresByID, convertReliseDate, convertReiting } from '../convert/convert';
 
 
-export function createMarkupGalleryElement({ id, title, poster_path, genre_ids, release_date, vote_average, name, first_air_date }) {
+export function createMarkupGalleryElement({ id, title, poster_path, genre_ids, release_date, vote_average, name, first_air_date, backdrop_path }) {
 
             return `<li class="gallery-film__item" data-movie-id = ${id}>
     <a data-modal-open href="" class="gallery__link link" data-movie-id = ${id}>
         <div class="gallery-list__card">
         <div class="gallery-list__poster">
-        <img src=${!poster_path ? imageDefaults : `${apiImage}original${poster_path}`}
+        <img src=${!poster_path ? imageDefaults : `${apiImage}w500${poster_path}`}
         alt="poster"
         class="gallery-film__img"
         data-movie-id=${id}

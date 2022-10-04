@@ -1,11 +1,12 @@
 import getRefs from '../refs/refs';
 import { createMarkupGalleryElement } from '../markup/markupGallerylEl';
-import { requestPopularMovies, requestFilm, requestSoonRelise, requestRating, requestGenre, requestYear, requestYearAndGenre} from './api';
+import { requestPopularMovies, requestFilm, requestSoonRelise, requestRating, requestGenre, requestYear, requestYearAndGenre, requestFilmByID} from './api';
 import { spinnerOn } from '../spiner/spiner'
 import { renderPagination } from '../pagination/pagination'
 import { getSerchName } from './searchQuery';
 import { choiseFetchTrendMovie } from './changeClass';
 import { nextPage } from './api';
+import { markupOneFilmHomePage } from '../markup/markupOneFilmHome';
 
 const refs = getRefs();
 
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchDistribution();
 });
 
-export async function fetchDistribution() {
+export async function fetchDistribution(id) {
   try {
     refs.galleryListEL.innerHTML = '';
 
@@ -66,8 +67,7 @@ export async function fetchDistribution() {
      return  fetchDistributionOptions(results, page, total_pages)
       }
       
-    
-    
+
    } catch (error) {
       console.log(error);
       
@@ -84,4 +84,30 @@ function fetchDistributionOptions(results, page, total_pages) {
         results.map(createMarkupGalleryElement).join('')
       );
         return renderPagination(page, total_pages); 
+}
+
+export async function fetchOneFilm(id) {
+  /* поиск по ID */
+  try {
+    
+      const  results  = await requestFilmByID(id);  
+        
+      return fetchDistributionOneFilmOptions(results);
+    } catch (error) {
+      console.log(error);
+    }
+      
+}
+
+
+export function fetchDistributionOneFilmOptions(results) {
+  spinnerOn()
+
+  refs.modalBoxForOneFilmEl.innerHTML = '';
+  
+        refs.modalBoxForOneFilmEl.insertAdjacentHTML(
+        'afterbegin', markupOneFilmHomePage(results)
+        
+      );
+       
 }

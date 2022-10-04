@@ -1,0 +1,315 @@
+@media screen and (min-width: 320px) {
+  body {
+    overflow-x: scroll;
+  }
+
+  body.modal-open {
+    overflow: hidden;
+    overflow-y: hidden;
+  }
+
+  .is-hidden.backdrop {
+    visibility: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    & .modal {
+      opacity: 0;
+    }
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto';
+  
+    color: $movieTitleTextColor;
+    background: rgba(0, 0, 0, 0.2);
+    transition-property: opacity;
+    transition-duration: 250ms;
+  }
+
+  .modal__box {
+    position: relative;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 85vh;
+    border-radius: 5px;
+    padding-top: 48px;
+    padding-bottom: 40px;
+    width: 280px;
+    
+    background-color: $mainBackgroundColor;
+    box-shadow: 0px 0px 15px 5px rgba(255, 107, 8, 0.75);
+  }
+
+  .modal {
+    width: 280px;
+    // padding: 48px 20px 40px 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-y: scroll;
+    
+    background-color: $mainBackgroundColor;
+    transition-property: scale, transform, opacity;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .modal__close-button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: $primaryFamily;
+    font-weight: 900;
+    font-size: $logoFontSize;
+    
+    fill: $movieTitleTextColor;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    z-index: 16;
+
+    &:hover,
+    &:focus {
+      color: $accentTextColor;
+    }
+  }
+
+  // .modal__icon-close {
+  //   display: inline-block;
+  //   width: 1em;
+  //   height: 1em;
+  //   stroke-width: 0;
+    
+  //   fill: $movieTitleTextColor;
+  //   width: 30px;
+  //   height: 30px;
+  //   transition-property: color;
+  //   transition-duration: 250ms;
+  //   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  //   &:hover,
+  //   &:focus {
+  //     color: $accentTextColor;
+  //   }
+  // }
+
+  .modal__poster {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: fill;
+  }
+
+  .modal__original-title {
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.15;
+    text-transform: uppercase;
+  }
+
+  .modal__movie-info-table {
+    margin-top: 20px;
+    width: 100%;
+
+    & .modal__movie-info-table-row {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.33;
+
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
+    }
+
+    & .col1 {
+      
+      color: $categoryTextColor;
+    }
+
+    & .cell-div {
+      display: flex;
+      height: 16px;
+      font-size: 12px;
+      line-height: 1.17;
+      text-align: center;
+      align-items: center;
+
+      & .col2-vote {
+        background-color: $accentBackgroundColor;
+        border-radius: 5px;
+        color: $headerTextColor;
+        width: 36px;
+        margin-right: 3px;
+      }
+
+      & .col2-votes {
+        background-color: $footerBackgroundColor;
+        border-radius: 5px;
+        
+        color: $movieTitleTextColor;
+        width: 36px;
+        margin-left: 3px;
+      }
+    }
+  }
+
+  .modal__movie-about {
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+  }
+
+  .modal__movie-about-description {
+    margin-top: 8px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.67;
+  }
+
+  .modal__button-block {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .modal__button-tmpl {
+    border: none;
+    width: 110px;
+    height: 44px;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    background-color: $headerTextColor;
+    
+
+    border: $movieTitleTextColor solid 1px;
+    transition-property: color, background-color;
+    transition-duration: 250ms;
+    // transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      background-color: $accentBackgroundColor;
+      color: #fff;
+      border: $accentBackgroundColor solid 1px;
+    }
+
+    &.add-to-watched-button {
+      padding: 0 10px;
+    }
+  }
+
+  .show-modal-button {
+  
+    border: $movieTitleTextColor solid 1px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal__box {
+    max-height: 95vh;
+    width: 704px;
+    transform: translate(-50%, -50%);
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .modal {
+    display: flex;
+    width: 100%;
+
+    padding: 0px 72px 0px 36px;
+    justify-content: space-between;
+  }
+
+  .modal__thumb-for-image {
+    width: 264px;
+    height: 373.55px;
+  }
+
+  .modal__thumb-for-description {
+    width: 264px;
+    padding-bottom: 40px;
+  }
+
+  .modal__original-title {
+    margin-top: 0;
+  }
+
+  .modal__button-tmpl {
+    width: 125px;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  .modal__box {
+    width: 814px;
+    padding-top: 40px;
+  }
+
+  .modal {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .modal__thumb-for-image {
+    width: 375px;
+    height: 478px;
+  }
+
+  .modal__thumb-for-description {
+    width: 391px;
+  }
+
+  .modal__original-title {
+    margin-top: 0;
+    font-size: 30px;
+    line-height: 1.17;
+  }
+
+  .modal__button-block {
+    justify-content: start;
+    padding-left: 18px;
+  }
+
+  .modal__button-tmpl {
+    width: 136px;
+  }
+
+  .modal__button-tmpl.add-to-queue-button {
+    margin-left: 15px;
+  }
+
+    .modal__button-tmpl.add-to-trailer-button {
+      margin-left: 15px;
+    }
+}

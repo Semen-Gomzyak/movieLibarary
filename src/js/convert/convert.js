@@ -45,12 +45,10 @@ export function convertGanresByID(genres) {
 }
 
 export function convertGanresByName(genres) {
-
-  for (const value of genreIds) {
-    if (value.id === genres) {
-            ganre =  value.name
-          }
+  let genre = [];
+  for (const value of genres) {
+    genre.push(`${value.name}`)
       }
         
-  return changeGenres(ganre);
+  return genre
 }

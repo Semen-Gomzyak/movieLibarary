@@ -1,31 +1,23 @@
 import getRefs from '../refs/refs';
 import { fetchDistribution } from './fetchDistribution';
-import { resetPage, changeGenres, getYear } from './api';
+import { resetPage, changeGenres, getYear, getGenres } from './api';
 import { choiseFetchGenres, choiseFetchYearAndGenres } from './changeClass';
 import { spinnerOff } from '../spiner/spiner';
 
 
 
 const refs = getRefs();
-refs.filterGenres.addEventListener("mouseup", mouseupForGenres);
 
-function mouseupForGenres(evt) {
-    evt.preventDefault()
-
-    if (evt.currentTarget.selectedIndex === 0) {
-    return
-    }
-
-    if (evt.currentTarget.selectedIndex > 0) {
-     return refs.filterGenres.addEventListener("click", clickForGenres);
-    }
-}
-
+return refs.filterGenres.addEventListener("click", clickForGenres);
 
 function clickForGenres(evt) {
     evt.preventDefault()
     const evtIndex = refs.filterGenres.options.selectedIndex;
     const convertToIndexValue = refs.filterGenres[evtIndex].attributes.value.value;
+
+    if (getGenres() === convertToIndexValue || "" === convertToIndexValue) {
+       return
+   }
 
     if (getYear() > 0) {
         if (convertToIndexValue !== [0]) {
@@ -48,6 +40,4 @@ function clickForGenres(evt) {
     choiseFetchGenres()
     fetchDistribution()
     }
-
-    return refs.filterGenres.removeEventListener("click", clickForGenres);
 }

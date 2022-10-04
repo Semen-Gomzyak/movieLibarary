@@ -11,5 +11,8 @@ import './js/convert/convert';
 import './js/genres/genresList';
 import './js/year/year';
 import './js/markup/markupGallerylEl';
+import './js/markup/markupOneFilmHome';
 import './js/pagination/pagination';
 import './js/spiner/spiner';
+import './js/modal/open-modal';
+import './js/storage/localStorage'

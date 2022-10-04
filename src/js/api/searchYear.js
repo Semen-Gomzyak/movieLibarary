@@ -1,6 +1,6 @@
 import getRefs from '../refs/refs';
 import { fetchDistribution } from './fetchDistribution';
-import { resetPage, changeYear, getGenres } from './api';
+import { resetPage, changeYear, getGenres, getYear } from './api';
 import { choiseFetchYear, choiseFetchYearAndGenres } from './changeClass';
 import { spinnerOff } from '../spiner/spiner';
 
@@ -13,6 +13,10 @@ function clickForYear(evt) {
     evt.preventDefault()
     const evtIndex = refs.yearFilter.options.selectedIndex;
     const convertToIndexValue = refs.yearFilter[evtIndex].attributes.value.value;
+
+    if (getYear() === convertToIndexValue || "" === convertToIndexValue) {
+       return
+   }
 
     if (getGenres() !== "") {
     if (convertToIndexValue === [0]) {
